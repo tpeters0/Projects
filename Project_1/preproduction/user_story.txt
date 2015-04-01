@@ -1,0 +1,4 @@
+As a game player,
+in order to sink ships to win,
+I want to enter grid coordinates to 'torpedo' and mark the spot as either a hit, if there is a ship at that coordinate,
+or miss if there is no ship.

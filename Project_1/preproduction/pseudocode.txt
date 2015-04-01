@@ -1,0 +1,54 @@
+- create ocean/grid
+    - make hash with
+    -column lables: 1 array with string of incremental numbers, 1 -10
+    - 10 row arrays named A to J with 1 value of corresponding letter (row labels), 10 values of " ~ ", and one value "|"
+
+        - puts(column_head_array)
+        - puts(Array_A.join(" | "))
+        - puts("----------------")
+        - puts(Array_B.join(" | "))
+        - puts("----------------")
+
+        ... thru
+
+        - puts(Array_J.join(" | ")
+        - puts("----------------")
+
+- assign coordinates to equal parts of ship
+  - create ship class with two instances
+  - have second player enter values for ships?
+      or
+        - random select row and index, and incremental or decremental for 4 array indexes
+          or
+        - random select row and index, match index number of 4 consecutive arrays
+
+  -  Boolean value for whether ship is there or not
+      - default is no ship = false
+      - otherwise ship = true
+
+- Methods for playing game
+  - Get user input - row A - J, column 1-10
+  - Using that input, evaluate whether there is a ship there or not
+        - access the hash with appropriate array and index
+        - determine if true or false for ship
+
+  - Results from determination of whether ship or not
+      - If true
+          - puts("It's a hit!")
+          - change " ~ " in appropriate array index to " * " for display in grid
+      - If false
+          - puts("Sorry.  That's a miss!")
+          - change " ~ " in appropriate array index to " o " for display in grid
+
+  - If all 5 spots of ship model are hit
+        - puts "You sunk it!"
+        - add to user score
+
+      - when both are sunk
+        - puts "You win!!!"
+
+- Additional methods needed
+  - quit
+  - clear board
+  - view score
+  - view number of turns taken
