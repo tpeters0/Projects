@@ -6,4 +6,6 @@ There are two hidden ships, both 5 segments (rows or columns) long.  When all 5 
 
 This app is currently in development.
 
-March 31, 2015
+Using database sunk_db
+
+April 1, 2015
