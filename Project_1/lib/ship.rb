@@ -1,4 +1,4 @@
-class SHIP < ActiveRecord::Base
+class Ship < ActiveRecord::Base
   has_many :targets
 
  def to_s

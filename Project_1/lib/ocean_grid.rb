@@ -1,35 +1,58 @@
 class OceanGrid < ActiveRecord::Base
-  has_many :ships, dependent: :destroy
-  has_many :ocean_spots
+  has_many :targets
 
-def col_labels
-  return ["   ", " 1 ", " 2 ", " 3 ", " 4 "," 5 "," 6 "," 7 "," 8 "," 9 ", " 10", ""]
+
+  def print_grid
+    column_labels = ["   ", " 1 ", " 2 ", " 3 ", " 4 "," 5 "," 6 "," 7 "," 8 "," 9 ", " 10", ""]
+
+    puts("")
+    puts column_labels.join("|")
+    puts("---+" * 11)
+    row_counter = 1
+    while row_counter <= 10
+      col_counter = 1
+      if row_counter == 1
+        print(" A |")
+      elsif row_counter == 2
+        print(" B |")
+      elsif row_counter == 3
+        print(" C |")
+      elsif row_counter == 4
+        print(" D |")
+      elsif row_counter == 5
+        print(" E |")
+      elsif row_counter == 6
+        print(" F |")
+      elsif row_counter == 7
+        print(" G |")
+      elsif row_counter == 8
+        print(" H |")
+      elsif row_counter == 9
+        print(" I |")
+      elsif row_counter == 10
+        print(" J |")
+      end
+
+      while col_counter <= 10
+        current_target = targets.find_by(row_num: row_counter, col_num: col_counter)
+        print(current_target.to_s)
+        col_counter += 1
+      end
+      print("\n" + "---+" * 11 + "\n")
+      row_counter += 1
+    end
+  end
+
+  def clear_grid
+    targets.update_all(called: false, hit: false)
+  end
 end
 
 
-  row_A =         [" A ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_B =         [" B ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_C =         [" C ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_D =         [" D ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_E =         [" E ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_F =         [" F ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_G =         [" G ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_H =         [" H ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_I =         [" I ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-  row_J =         [" J ", " ~ ", " ~ ", " ~ ", " ~ "," ~ "," ~ "," ~ "," ~ "," ~ ", " ~ ", ""]
-
-  ocean_hash = {row_A => row_A,
-  row_B => row_B,
-  row_C => row_C,
-  row_D => row_D,
-  row_E => row_E,
-  row_F => row_F,
-  row_G => row_G,
-  row_H => row_H,
-  row_I => row_I,
-  row_J => row_J
-  }
-
-
-
-end
+#
+#
+# class Person
+#   def full_name
+#     first_name + " " + last_name
+#   end
+# end
