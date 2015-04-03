@@ -14,7 +14,9 @@ row_counter = 1
 while row_counter <= 10
   col_counter = 1
   while col_counter <= 10
-    if rand(2) == 1
+    if row_counter == 3 and col_counter < 6
+      hit = true
+    elsif row_counter > 4 and col_counter == 9
       hit = true
     else
       hit = false

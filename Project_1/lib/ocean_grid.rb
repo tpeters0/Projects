@@ -44,7 +44,7 @@ class OceanGrid < ActiveRecord::Base
   end
 
   def clear_grid
-    targets.update_all(called: false, hit: false)
+    targets.update_all(called: false)
   end
 end
 
