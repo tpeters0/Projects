@@ -1,9 +1,11 @@
 class OceanGrid < ActiveRecord::Base
   has_many :targets
+  validates :id, :presence => true
 
 
   def print_grid
     column_labels = ["   ", " 1 ", " 2 ", " 3 ", " 4 "," 5 "," 6 "," 7 "," 8 "," 9 ", " 10", ""]
+    row_labels = %w(A B C D E F G H I J)
 
     puts("")
     puts column_labels.join("|")
@@ -11,27 +13,8 @@ class OceanGrid < ActiveRecord::Base
     row_counter = 1
     while row_counter <= 10
       col_counter = 1
-      if row_counter == 1
-        print(" A |")
-      elsif row_counter == 2
-        print(" B |")
-      elsif row_counter == 3
-        print(" C |")
-      elsif row_counter == 4
-        print(" D |")
-      elsif row_counter == 5
-        print(" E |")
-      elsif row_counter == 6
-        print(" F |")
-      elsif row_counter == 7
-        print(" G |")
-      elsif row_counter == 8
-        print(" H |")
-      elsif row_counter == 9
-        print(" I |")
-      elsif row_counter == 10
-        print(" J |")
-      end
+      print(" #{row_labels[row_counter - 1]} |")
+
 
       while col_counter <= 10
         current_target = targets.find_by(row_num: row_counter, col_num: col_counter)

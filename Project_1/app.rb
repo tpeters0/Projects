@@ -50,6 +50,7 @@ def get_coordinates
   puts "Enter M for menu or"
   puts("Enter the row letter that you want to target:")
   user_row = gets.chomp
+
     if user_row.upcase == "A"
       row_number = 1
     elsif user_row.upcase == "B"
@@ -95,13 +96,5 @@ menu
 
 
 
-
-
-
-
-
-# if gets.chomp == "clear"
-# board.clear_grid
-# end
 
 # binding.pry

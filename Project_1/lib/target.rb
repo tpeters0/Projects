@@ -1,15 +1,22 @@
 class Target < ActiveRecord::Base
   belongs_to :ship
   belongs_to :ocean_grid
+  validates :row_num, :presence => true
+  validates :col_num, :numericality => true
+  # validates :
+
+  # def hit
+  #   selfupdate(called: true)
+  # end
 
   def to_s
     if called == false
-      return " ~ |"
+      return "\e[44m ~ \e[0m|"
     else
       if hit == true
-        return " X |"
+        return "\e[41m X \e[0m|"
       else
-        return " O |"
+        return "\e[36m O \e[0m|"
       end
     end
   end
