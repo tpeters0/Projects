@@ -7,7 +7,7 @@ require_relative 'lib/target'
 require_relative 'lib/ship'
 require_relative 'lib/ocean_grid'
 
-
+# theres alot of times when your asking for a user input and than storing the input into a variable. Maybe we could refactor this sort of behavior into one method call.
 def welcome
   puts("         Welcome to Sink, Sank, Sunk")
 end
@@ -27,11 +27,13 @@ def menu
 
       menu_input = gets().chomp
       board = OceanGrid.first
+      #
 
       if menu_input == "1"
         loop do
           board.print_grid
           get_coordinates
+          # will this loop end?
         end
 
       elsif menu_input == "2"
@@ -50,7 +52,9 @@ def get_coordinates
   puts "Enter M for menu or"
   puts("Enter the row letter that you want to target:")
   user_row = gets.chomp
-
+# maybe instead of this gigantic if else conditional, use a hash something like this
+# {row_letter: "A", row_value: 1}
+# also this conditional doesn't need to be nested(tabbed over) unneccessary white space the if conditional is running synchronously right after the gets.chomp so it doesn't need to be indented
     if user_row.upcase == "A"
       row_number = 1
     elsif user_row.upcase == "B"
@@ -94,7 +98,7 @@ welcome
 instructions
 menu
 
-
+# I haven't actually run your program, so I don't know if it's functional. But it looks like its working or close to working. I like that you abstracted alot of the logic into your class definitions. Maybe create a game class and abstract all of your UI logic.
 
 
 # binding.pry

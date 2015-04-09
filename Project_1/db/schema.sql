@@ -22,3 +22,5 @@ CREATE TABLE ships (
 CREATE TABLE ocean_grids (
   id SERIAL PRIMARY KEY
 )
+
+# maybe give the ocean_grids table a name for some user experience. other than that looks good.

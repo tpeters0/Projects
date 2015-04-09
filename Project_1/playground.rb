@@ -52,3 +52,5 @@ puts ""
 
 # puts "\e[44m  ~ ~ ~ ~ ~ ~ ~ ~"
 # puts "\e[0m"
+
+# i like this test file here that you used to just test out some code. it's like using pry.. only bigger!

@@ -10,3 +10,6 @@ describe 'welcome' do
       expect(welcome).to_not eql(nil)
     end
 end
+
+# nice test.
+# Going forward in this program, you would want to develop tests for your models in your lib folder and some of your UI code in your app.rb

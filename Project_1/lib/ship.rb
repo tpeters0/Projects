@@ -6,3 +6,5 @@ class Ship < ActiveRecord::Base
  end
 
 end
+
+# looks good, a little unneccessary white space here.

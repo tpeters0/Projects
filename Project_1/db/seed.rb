@@ -28,4 +28,6 @@ while row_counter <= 10
   row_counter += 1
 end
 
+# This is interesting way of coding the seed file. I like it. I woulda just hardcoded the targets, this is far more elegant. Although I would look into the .times method
+
 # board.targets.find_by(row_num: row_counter, col_num: col_counter)
