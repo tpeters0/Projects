@@ -10,6 +10,7 @@ class Target < ActiveRecord::Base
   # end
 
   def to_s
+    # im unsure what what escapes are doing, could you tell me when you get a chance? I've never seen that before.
     if called == false
       return "\e[44m ~ \e[0m|"
     else

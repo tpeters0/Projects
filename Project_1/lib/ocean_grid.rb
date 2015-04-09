@@ -30,7 +30,7 @@ class OceanGrid < ActiveRecord::Base
     targets.update_all(called: false)
   end
 end
-
+# looks good
 
 #
 #

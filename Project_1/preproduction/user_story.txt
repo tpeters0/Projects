@@ -2,3 +2,8 @@ As a game player,
 in order to sink ships to win,
 I want to enter grid coordinates to 'torpedo' and mark the spot as either a hit, if there is a ship at that coordinate,
 or miss if there is no ship.
+
+# user stories should break down problems.
+# Ex. - A user should be able to enter grid coordinates
+# Ex. - A user should be able to fire a torpedo
+# Ex. - A user should be able to hit a ship.
